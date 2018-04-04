@@ -1,0 +1,13 @@
+
+    <?php if(isset($avertissement)) {echo $avertissement;} ?>
+    <form enctype="multipart/form-data" id="droite_form"  name="actus" action="admin.php?action=<?php if(isset($action_form)){echo $action_form;} ?>" method="POST">
+            <h1>Créer un nouvel article</h1>
+					<input  placeholder="Numéro de la zone(Obligatoire)"  type="number" name="zone_actu" value="<?php if(isset($_POST['zone_actu'])) {echo $_POST['zone_actu'];} ?>"/>
+                    <label for="date">Dâte limite de diffusion</label>
+                    <input  placeholder="Date limite de diffusion" id="date" type="date" name="date_limite_actu" value="<?php if(isset($_POST['date_limite_actu'])) {echo $_POST['date_limite_actu'];}else{echo date("Y-m-d");} ?>"/>			
+					<input  placeholder="Titre actu <h1>" id="input_mel" type="text" name="titre_actu_h1" value="<?php if(isset($_POST['titre_actu_h1'])) {echo $_POST['titre_actu_h1'];} ?>"/>
+					<input  placeholder="Titre actu <h2>" id="input_mel" type="text" name="titre_actu_h2" value="<?php if(isset($_POST['titre_actu_h2'])) {echo $_POST['titre_actu_h2'];} ?>"/>
+					<textarea  placeholder="Ecrivez votre article..." id="text_message" name="text_actu"><?php if(isset($_POST['text_actu'])) {echo $_POST['text_actu'];} ?></textarea>
+                    <input  placeholder="Image actu (Obligatoire)" id="image_actu" type="file" name="image_actu" value=""/>			
+                    <input  id="creer" type="submit" name="submit" value="<?php if(isset($intitule_bouton)){echo $intitule_bouton;} ?>"/>
+                </form>
