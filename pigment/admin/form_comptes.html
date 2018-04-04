@@ -1,0 +1,16 @@
+
+    <?php if(isset($avertissement)) {echo $avertissement;} ?>
+    <form enctype="multipart/form-data" id="droite_form"  class="form_comptes" name="comptes" action="admin.php?action=<?php if(isset($action_form)){echo $action_form;} ?>" method="POST">
+            <h1>Créer un nouveau compte</h1>
+                    <label for="date">Nom</label>
+                    <input placeholder="Nom"    id="name"   type="text" name="nom_compte"   value="<?php if(isset($_POST['nom_compte'])) {echo $_POST['nom_compte'];} ?>"/>
+                    <label for="date">Prénom</label>
+                    <input placeholder="Prénom"    id="name"   type="text" name="prenom_compte"   value="<?php if(isset($_POST['prenom_compte'])) {echo $_POST['prenom_compte'];} ?>"/>
+                    <label for="date">Login</label>
+                    <input placeholder="Login"    id="name"   type="text" name="login_compte"   value="<?php if(isset($_POST['login_compte'])) {echo $_POST['login_compte'];} ?>"/>
+                    <label for="date">Mot de passe</label>
+                    <input placeholder="Mot de passe"    id="name"   type="text" name="pass_compte1"   value="<?php if(isset($_POST['pass_compte1'])) {echo $_POST['pass_compte1'];} ?>"/>
+                    <label for="date">Confirmer mot de passe</label>
+                    <input placeholder="Mot de passe"    id="name"   type="text" name="pass_compte2"   value="<?php if(isset($_POST['pass_compte2'])) {echo $_POST['pass_compte2'];} ?>"/>
+                    <input  id="creer" type="submit" name="submit" value="<?php if(isset($intitule_bouton)){echo $intitule_bouton;} ?>"/>
+                </form>
